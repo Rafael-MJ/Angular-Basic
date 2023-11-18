@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="mb-3">
+    <label for="num1" class="form-label">Numero 1</label>
+    <input type="number" class="form-control" id="num1" [(ngModel)]="n1" />
+  </div>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="num2" class="form-label">Numero 2</label>
+    <input type="number" class="form-control" id="num2" [(ngModel)]="n2" />
+  </div>
+</div>
+
+<div class="form-floating mb-3">
+  <select class="form-select" id="floatingSelect" [(ngModel)]="operacao">
+    <option value="0" selected>Soma</option>
+    <option value="1">Subtração</option>
+    <option value="2">Divisão</option>
+    <option value="3">Multiplicação</option>
+  </select>
+  <label for="floatingSelect">Operação</label>
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-secondary" (click)="calcular()">
+    Calcular
+  </button>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="result" class="form-label">Resultado</label>
+    <input
+      type="number"
+      class="form-control"
+      id="result"
+      [value]="resultado"
+      disabled
+    />
+  </div>
+</div>

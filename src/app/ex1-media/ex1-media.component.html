@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="mb-3">
+    <label for="ac1" class="form-label">AC1</label>
+    <input type="number" class="form-control" id="ac1" [(ngModel)]="ac1" />
+  </div>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="ac2" class="form-label">AC2</label>
+    <input type="number" class="form-control" id="ac2" [(ngModel)]="ac2" />
+  </div>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="ag" class="form-label">AG</label>
+    <input type="number" class="form-control" id="ag" [(ngModel)]="ag" />
+  </div>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="af" class="form-label">AF</label>
+    <input type="number" class="form-control" id="af" [(ngModel)]="af" />
+  </div>
+</div>
+
+<div class="row">
+  <button type="button" class="btn btn-secondary" (click)="calcular()">
+    Calcular
+  </button>
+</div>
+<div class="row">
+  <div class="mb-3">
+    <label for="result" class="form-label">Resultado</label>
+    <input
+      type="text"
+      class="form-control"
+      id="result"
+      [value]="resultado"
+      disabled
+    />
+  </div>
+</div>

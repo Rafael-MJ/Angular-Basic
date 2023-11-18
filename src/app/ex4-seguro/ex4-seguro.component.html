@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="mb-3">
+    <label for="nome" class="form-label">Nome</label>
+    <input type="text" class="form-control" id="nome" [(ngModel)]="nome" />
+  </div>
+</div>
+<div class="form-floating mb-3">
+  <select class="form-select" id="sexo" [(ngModel)]="sexo">
+    <option value="0" selected>Masculino</option>
+    <option value="1">Feminino</option>
+    <option value="2">Não Especificar</option>
+  </select>
+  <label for="sexo">Sexo</label>
+</div>
+<div class="row">
+    <div class="mb-3">
+      <label for="idade" class="form-label">Idade</label>
+      <input type="number" class="form-control" id="idade" [(ngModel)]="idade" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3">
+      <label for="veiculo" class="form-label">Veículo</label>
+      <input type="number" class="form-control" id="veiculo" [(ngModel)]="valor_veiculo" />
+    </div>
+  </div>
+  
+  <div class="row">
+    <button type="button" class="btn btn-secondary" (click)="calcular()">
+      Cadastrar
+    </button>
+  </div>

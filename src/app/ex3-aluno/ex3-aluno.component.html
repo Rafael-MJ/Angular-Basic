@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="mb-3">
+      <label for="ra" class="form-label">RA</label>
+      <input type="number" class="form-control" id="ra" [(ngModel)]="ra" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="nome" [(ngModel)]="nome" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3">
+      <label for="email" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="mail" />
+    </div>
+  </div>
+  <div class="row">
+    <div class="mb-3">
+      <label for="celular" class="form-label">Celular</label>
+      <input type="tel" class="form-control" id="celular" [(ngModel)]="celular" />
+    </div>
+  </div>
+  
+  <div class="row">
+    <button type="button" class="btn btn-secondary" (click)="calcular()">
+      Cadastrar
+    </button>
+  </div>
