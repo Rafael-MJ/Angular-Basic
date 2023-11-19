@@ -14,7 +14,6 @@ export class Ex3AlunoComponent {
   alunos: any[] = [];
 
   public verifyEmail() {
-    window.alert(this.mail + " " + this.ra + " " + this.celular + " " + this.nome)
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if (emailPattern.test(this.mail)) {
       return true;

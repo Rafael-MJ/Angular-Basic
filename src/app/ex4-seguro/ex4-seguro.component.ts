@@ -27,16 +27,20 @@ export class Ex4SeguroComponent {
   }
 
   public onSubmit() {
-    window.alert("Cliente Cadastrado!");
+    if (this.nome !== '') {
+      window.alert("Cliente Cadastrado!");
 
-    const novoCliente = {
-      nome: this.nome,
-      sexo: this.sexo,
-      idade: this.idade,
-      veiculo: 'R$' + this.veiculo,
-      apolice: 'R$' + this.calcApolice()
-    };
+      const novoCliente = {
+        nome: this.nome,
+        sexo: this.sexo,
+        idade: this.idade,
+        veiculo: 'R$' + this.veiculo,
+        apolice: 'R$' + this.calcApolice()
+      };
 
-    this.clientes.push(novoCliente);
+      this.clientes.push(novoCliente);
+    } else {
+      window.alert('Nome Inválido!')
+    }
   }
 }
