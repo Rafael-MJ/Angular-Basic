@@ -9,17 +9,32 @@ export class Ex4SeguroComponent {
   nome: string = '';
   sexo: string = '0';
   idade: number = 18;
-  veiculo: string = '';
+  veiculo: number = 0;
   clientes: any[] = [];
 
+  public percentage(partialValue: number, totalValue: number) {
+    return (100 * partialValue) / totalValue;
+  } 
+
+  public calcApolice() {
+    if (this.sexo === "0" && this.idade <= 25) {
+      return this.percentage(15, this.veiculo).toPrecision(4);
+    } else if (this.sexo === "0" && this.idade > 25) {
+      return this.percentage(10, this.veiculo).toPrecision(4);
+    } else {
+      return this.percentage(8, this.veiculo).toPrecision(4);
+    }
+  }
+
   public onSubmit() {
-    window.alert("Aluno Cadastrado!");
+    window.alert("Cliente Cadastrado!");
 
     const novoCliente = {
       nome: this.nome,
       sexo: this.sexo,
       idade: this.idade,
-      veiculo: this.veiculo
+      veiculo: 'R$' + this.veiculo,
+      apolice: 'R$' + this.calcApolice()
     };
 
     this.clientes.push(novoCliente);

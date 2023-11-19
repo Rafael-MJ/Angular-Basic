@@ -9,7 +9,6 @@
         <select class="form-select" name="sexo" id="sexo" [(ngModel)]="sexo">
           <option value="0" selected>Masculino</option>
           <option value="1">Feminino</option>
-          <option value="2">Não Especificar</option>
         </select>
         <label for="sexo">Sexo</label>
       </div>
@@ -21,8 +20,8 @@
       </div>
       <div class="row">
         <div class="mb-3">
-          <label for="veiculo" class="form-label">Veiculo</label>
-          <input type="text" name="veiculo" class="form-control" id="veiculo" placeholder="Opala" [(ngModel)]="veiculo" />
+          <label for="veiculo" class="form-label">Valor do Veiculo</label>
+          <input type="number" name="veiculo" class="form-control" id="veiculo" placeholder="5000.00" [(ngModel)]="veiculo" />
         </div>
       </div>
       
@@ -40,7 +39,8 @@
             <th scope="col">Nome</th>
             <th scope="col">Sexo</th>
             <th scope="col">Idade</th>
-            <th scope="col">Veiculo</th>
+            <th scope="col">Valor Veiculo</th>
+            <th scope="col">Valor Apolice</th>
           </tr>
         </thead>
         <tbody id="tbody">
@@ -49,6 +49,7 @@
             <td>{{ cliente.sexo }}</td>
             <td>{{ cliente.idade }}</td>
             <td>{{ cliente.veiculo }}</td>
+            <td>{{ cliente.apolice }}</td>
           </tr>
         </tbody>
       </table>
