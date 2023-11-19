@@ -1,32 +1,55 @@
-<div class="row">
-  <div class="mb-3">
-    <label for="nome" class="form-label">Nome</label>
-    <input type="text" class="form-control" id="nome" [(ngModel)]="nome" />
-  </div>
-</div>
-<div class="form-floating mb-3">
-  <select class="form-select" id="sexo" [(ngModel)]="sexo">
-    <option value="0" selected>Masculino</option>
-    <option value="1">Feminino</option>
-    <option value="2">Não Especificar</option>
-  </select>
-  <label for="sexo">Sexo</label>
-</div>
-<div class="row">
-    <div class="mb-3">
-      <label for="idade" class="form-label">Idade</label>
-      <input type="number" class="form-control" id="idade" [(ngModel)]="idade" />
-    </div>
-  </div>
-  <div class="row">
-    <div class="mb-3">
-      <label for="veiculo" class="form-label">Veículo</label>
-      <input type="number" class="form-control" id="veiculo" [(ngModel)]="valor_veiculo" />
-    </div>
-  </div>
+<form (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="mb-3">
+          <label for="nome" class="form-label">Nome</label>
+          <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" [(ngModel)]="nome" />
+        </div>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" name="sexo" id="sexo" [(ngModel)]="sexo">
+          <option value="0" selected>Masculino</option>
+          <option value="1">Feminino</option>
+          <option value="2">Não Especificar</option>
+        </select>
+        <label for="sexo">Sexo</label>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="idade" class="form-label">Idade</label>
+          <input type="number" name="idade" class="form-control" min="18" max="99" id="idade" placeholder="18" [(ngModel)]="idade" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="mb-3">
+          <label for="veiculo" class="form-label">Veiculo</label>
+          <input type="text" name="veiculo" class="form-control" id="veiculo" placeholder="Opala" [(ngModel)]="veiculo" />
+        </div>
+      </div>
+      
+      <div class="nav row justify-content-center">
+          <button type="submit" class="btn btn-primary col-4">
+            Cadastrar
+          </button>
+      </div>
+     </form>
   
-  <div class="row">
-    <button type="button" class="btn btn-secondary" (click)="calcular()">
-      Cadastrar
-    </button>
-  </div>
+    <div class="row mt-3">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Veiculo</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr *ngFor="let cliente of clientes">
+            <td>{{ cliente.nome }}</td>
+            <td>{{ cliente.sexo }}</td>
+            <td>{{ cliente.idade }}</td>
+            <td>{{ cliente.veiculo }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

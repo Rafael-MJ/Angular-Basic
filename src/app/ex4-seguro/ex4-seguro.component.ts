@@ -6,20 +6,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./ex4-seguro.component.css']
 })
 export class Ex4SeguroComponent {
-  idade: number = 0;
   nome: string = '';
   sexo: string = '0';
-  valor_veiculo: number = 0;
+  idade: number = 18;
+  veiculo: string = '';
+  clientes: any[] = [];
 
-  public isNotUpperResult() {
-    return null;
-  }
+  public onSubmit() {
+    window.alert("Aluno Cadastrado!");
 
-  public isNotLowerResult() {
-    return null;
-  }
+    const novoCliente = {
+      nome: this.nome,
+      sexo: this.sexo,
+      idade: this.idade,
+      veiculo: this.veiculo
+    };
 
-  public calcular() {
-  
+    this.clientes.push(novoCliente);
   }
 }

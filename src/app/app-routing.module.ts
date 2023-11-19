@@ -6,7 +6,7 @@ import { Ex3AlunoComponent } from './ex3-aluno/ex3-aluno.component';
 import { Ex4SeguroComponent } from './ex4-seguro/ex4-seguro.component';
 
 const routes: Routes = [
-  {path : '', redirectTo : 'calculadora', pathMatch : 'full'},
+  {path : '', redirectTo : 'calculadora-media', pathMatch : 'full'},
   { path: 'calculadora', component: Ex2CalculadoraComponent },
   { path: 'calculadora-media', component: Ex1MediaComponent },
   { path: 'cadastro-aluno', component: Ex3AlunoComponent },

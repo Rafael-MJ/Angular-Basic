@@ -10,45 +10,51 @@ export class Ex3AlunoComponent {
   ra: number = 0;
   nome: string = '';
   mail: string = '';
-  celular: number = 0;
+  celular: number = 5511000000000;
+  alunos: any[] = [];
 
   public verifyEmail() {
-    let symbolChar = 0;
-    let verifyed = false;
-
-    if(this.mail.length != 0) {
-      for(let i = 0; i < this.mail.length; i++){
-        if (this.mail.charAt(i) === '@') {
-          symbolChar = i;
-          window.alert("gg")
-          for(let j = symbolChar; j < this.mail.length; j++){
-            window.alert(j);
-            if (this.mail.charAt(j) === '.')
-              verifyed = true;
-              break;
-          }
-        }
-      }
+    window.alert(this.mail + " " + this.ra + " " + this.celular + " " + this.nome)
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (emailPattern.test(this.mail)) {
+      return true;
+    } else {
+      window.alert("Insira um e-mail válido no formato: example@mail.com");
+      return false;
     }
-    return verifyed;
   }
 
   public verifyPhone() {
     let verifyed = false;
 
-    if (String(this.celular).length == 11) {
+    if (String(this.celular).length === 13) {
       return true;
     } else {
-      window.alert("Para o celular, insira onze(11) números no formato: 00000000000");
+      window.alert("Para o celular, insira treze(13) números no formato: 5500111111111");
       return false;
     }
-    return false;
   }
 
   public calcular() {
-    if (this.verifyEmail() && this.verifyPhone() && this.nome !== "")
+    if (this.verifyEmail() && this.verifyPhone() && this.nome.trim() !== "") {
       window.alert("Aluno Cadastrado!");
-    else
-      window.alert("Erro!");
+      return true;
+    } else {
+      window.alert("Preencha os Campos Devidamente!");
+      return false;
+    }
+  }
+
+  public onSubmit() {
+    if (this.calcular()) {
+      const novoAluno = {
+        ra: this.ra,
+        nome: this.nome,
+        email: this.mail,
+        celular: this.celular
+      };
+
+    this.alunos.push(novoAluno);
+    }
   }
 }
